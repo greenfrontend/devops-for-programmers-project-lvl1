@@ -2,7 +2,9 @@ version: "3.7"
 
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.production
     environment:
       - "NODOS_HOST=0.0.0.0"
     ports:

@@ -12,3 +12,6 @@ run-prod:
 
 build-image:
 	docker build --tag greenfrontend/project1 --file Dockerfile.production .
+
+push-image:
+	docker push greenfrontend/project1

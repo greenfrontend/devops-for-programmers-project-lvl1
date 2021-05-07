@@ -9,3 +9,6 @@ run-test:
 
 run-prod:
 	docker-compose up -d
+
+build-image:
+	docker build --tag greenfrontend/project1 --file Dockerfile.production .

@@ -9,6 +9,4 @@ services:
       - "NODOS_HOST=0.0.0.0"
     ports:
       - "0.0.0.0:8080:8080"
-    volumes:
-      - ./:/app
     command: npm start

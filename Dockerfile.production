@@ -1,4 +1,4 @@
-FROM node:14.6
+FROM node:14.16.1
 WORKDIR /app
 
 # Важно для кеширования слоев
@@ -9,4 +9,4 @@ RUN npm install
 
 COPY . .
 
-CMD npm start
+CMD ["npm", "start"]

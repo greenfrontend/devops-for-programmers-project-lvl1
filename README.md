@@ -4,4 +4,4 @@
 
 ### Test, build and push image:
 
-[![Actions Status](https://github.com/greenfrontend/devops-for-programmers-project-lvl1/workflows/push/badge.svg)](https://github.com/greenfrontend/devops-for-programmers-project-lvl1/actions)
+[![Test, Build and Push](https://github.com/greenfrontend/devops-for-programmers-project-lvl1/actions/workflows/push.yml/badge.svg)](https://github.com/greenfrontend/devops-for-programmers-project-lvl1/actions/workflows/push.yml)

@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  caddy:
+    image: caddy:2.3.0
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "${NODOS_DB_USERNAME}"
+      POSTGRES_PASSWORD: "${NODOS_DB_PASSWORD}"
+
+  app:
+    image: greenfrontend/project1
+    environment:
+      NODOS_HOST: 0.0.0.0
+      NODOS_DB_TYPE: "${NODOS_DB_TYPE}"
+      NODOS_DB_HOSTNAME: "${NODOS_DB_HOSTNAME}"
+      NODOS_DB_USERNAME: "${NODOS_DB_USERNAME}"
+      NODOS_DB_PASSWORD: "${NODOS_DB_PASSWORD}"
+    ports:
+      - "0.0.0.0:8080:8080"
+    command: npm start
+    depends_on:
+      - db
